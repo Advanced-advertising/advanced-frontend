@@ -1,0 +1,86 @@
+.login_wrap{
+    margin: 0 auto;
+    width: 1440px;
+    height: 1024px;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_logo{
+    margin-top: 225px;
+
+}
+.input{
+    box-sizing: border-box;
+    width: 320px;
+    height: 62px;
+    left: 35px;
+    top: 290px;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    padding: 16px 0px 16px 92px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.dont_have_acc{
+    width: 429px;
+    height: 36px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+
+    text-align: center;
+    text-decoration-line: underline;
+    margin-top: 17px;
+    color: #FFBE14;
+}
+.input_btn{
+    width: 376px;
+    height: 82px;
+    background: #FFBE14;
+    border-radius: 12px;
+
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 150%;
+    /* identical to box height, or 60px */
+
+
+    color: #FFFFFF;
+
+    margin-top: 72px;
+    cursor: pointer;
+}
+
+.input_box{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 502px;
+    height: 98px;
+}
+.ib-55{
+    margin-top: 55px;
+}
+.input_box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+
+}
+.input_box i{
+    position: absolute;
+    padding-left: 28px;
+
+}

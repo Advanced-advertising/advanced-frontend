@@ -1,0 +1,165 @@
+.advert_wrap{
+    display: flex;
+    flex-direction: column;
+    padding: 55px 250px;
+    align-items: center;
+    user-select: none;
+}
+.advert_upload{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+.advert_button_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.advert_button_wrap img{
+    width: 58px;
+}
+.input_button_text{
+    margin-top: 10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    /* identical to box height, or 48px */
+
+
+    color: #FFBE14;
+}
+.advert_days{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.advert_time p{
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    /* identical to box height, or 48px */
+    color: #000000;
+}
+.advert_button_next{
+    margin-top: 34px;
+    background: #FFBE14;
+    border-radius: 50px;
+}
+.advert_button_next button{
+    width: 150px;
+    height: 40px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 50%;
+    text-align: center;
+    color: #FFFFFF;
+}
+.advert_button{
+    margin: 0 auto;
+}
+.advert_button label input{
+    display: none;
+}
+.modal_close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* ADVERT DAYS*/
+
+.advert_days{
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    width: 360px;
+    height: 36px;
+}
+.day_round{
+    position: relative;
+}
+.day_round label{
+    border: 2px solid #FFBE14;
+    border-radius: 50%;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFBE14;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+}
+.day_round label:after{
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+.day_round input[type="checkbox"] {
+    visibility: hidden;
+}
+.day_round input[type="checkbox"]:checked + label {
+    background-color: #FFBE14;
+    border-color: #FFBE14;
+    color: #ffffff;
+}
+
+/* ADVERT DAYS*/
+
+
+/* Advert_time */
+
+.advert_time{
+    display: flex;
+    width: 220px;
+    justify-content: space-between;
+}
+.advert_time input{
+    outline: none;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+.advert_time input[type=time]::-webkit-inner-spin-button,
+.advert_time input[type=time]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.advert_time input[type=time]::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+}

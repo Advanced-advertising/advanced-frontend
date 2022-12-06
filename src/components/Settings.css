@@ -1,0 +1,119 @@
+.modal_settings{
+    display: flex;
+    flex-direction: column;
+}
+.settings_name{
+    width: 72px;
+    height: 36px;
+
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+    color: #FFBE14;
+}
+.name_input{
+    position: relative;
+}
+.name_input i{
+    position: absolute;
+    top: 25%;
+    padding-left: 5px;
+    pointer-events:none;
+ }
+.name_input input{
+    width: 180px;
+    height: 36px;
+    left: 15px;
+    top: 39px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+
+
+    color: #000000;
+}
+.settings_language{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.language{
+    width: 116px;
+    height: 36px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+
+
+    color: #FFBE14;
+}
+.theme{
+    width: 82px;
+    height: 36px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+
+
+    color: #FFBE14;
+}
+.settings_theme{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.currency{
+    width: 82px;
+    height: 36px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+
+
+    color: #FFBE14;
+}
+.settings_currency{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modal_buttons{
+    display: flex;
+    flex-direction: row;
+}
+.settings_currency .modal_buttons{
+    padding-right: 60px;
+}
+.modal_buttons button:active, .modal_buttons button:focus{
+    border: 2px solid #FFBE14;
+    border-radius: 6px;
+}
+.close{
+    position: relative;
+    color: #FF3E14;
+}
+.modal_close{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}

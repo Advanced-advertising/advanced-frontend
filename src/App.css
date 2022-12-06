@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.error_Message{
+    color: #FF3E14;
+    margin: 17px 0;
+    font-size: 24px;
+}

@@ -1,0 +1,99 @@
+.payment_wrap{
+    display: flex;
+    flex-direction: column;
+    padding: 55px 250px;
+    align-items: center;
+    user-select: none;
+}
+.payment_button_pay{
+    margin-top: 34px;
+    background: #FFBE14;
+    border-radius: 50px;
+}
+.payment_button_pay button{
+    width: 150px;
+    height: 40px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 50%;
+    text-align: center;
+    color: #FFFFFF;
+}
+.payment_card{
+    width: 400px;
+    height: 250px;
+    padding: 52px 17px 58px 17px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+}
+.checkout_form{
+    padding: 0 30px;
+}
+
+.checkout_form .input_item input[type="text"]{
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: center;
+    border-bottom: 2px solid #dddddd;
+    padding: 10px;
+    transition: all 0.5s ease;
+    color: #000000;
+    font-size: 18px;
+}
+
+.checkout_form .input_item{
+    margin-bottom: 10px;
+}
+
+.input_grp{
+    margin-bottom: 10px;
+}
+
+.input_grp,
+.input_grp .input_item.expiry_field{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_grp .input_item{
+    width: 45%;
+}
+
+.input_grp .input_item.expiry_field input[type="text"]{
+    width: 45%;
+}
+
+.btn{
+    width: 150px;
+    background: #000000;
+    margin: 0 auto;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.btn a{
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.checkout_form .input_item input[type="text"]:focus{
+    border-bottom: 2px solid #000000;
+}
+
+::-webkit-input-placeholder {
+    color: #dddddd;
+}
+::-moz-placeholder {
+    color: #dddddd;
+}
+:-ms-input-placeholder {
+    color: #dddddd;
+}

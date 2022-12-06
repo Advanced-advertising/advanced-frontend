@@ -1,0 +1,307 @@
+.container{
+    width: 1440px;
+    height: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+/*.container .settings{*/
+/*    background: url("../images/Gear.png");*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: 8px 8px;*/
+/*    padding: 8px 8px 8px 32px;*/
+/*}*/
+.buttons{
+    padding: 22px 0 0 23px;
+}
+.buttons button img{
+    width: 70px;
+    height: 70px;
+}
+.buttons button{
+    border: 1px solid white;
+    border-radius: 3rem;
+    background-color: white;
+    outline: none;
+}
+.search{
+    width: 500px;
+    height: 1024px;
+    background: rgba(255, 255, 255, 0.7);
+    position: relative;
+}
+.search_input{
+    height: 100px;
+    background-color:  #FFBE14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.search_input i{
+    position: absolute;
+    padding-right: 78%;
+    pointer-events:none;
+}
+.search_input input{
+    width: 450px;
+    height: 60px;
+
+
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 12px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    padding-left: 54px;
+}
+.option_wrapper{
+    padding: 0 22px;
+    margin: 10px 0;
+}
+/* MULTI SELECT*/
+.option form{
+    display: flex;
+    justify-content: space-between;
+}
+.selectBox, .selectBox2 {
+    position: relative;
+}
+
+.selectBox select {
+    width: 173px;
+    height: 33px;
+    background-color: #FFBE14;
+    color: white;
+    border-radius: 50px;
+}
+.selectBox2 select{
+    width: 103px;
+    height: 33px;
+    background-color: #FFBE14;
+    color: white;
+    border-radius: 50px;
+}
+
+.overSelect, .overSelect2 {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkboxes, #checkboxes2 {
+    display: none;
+    background-color: #FFBE14;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+#checkboxes label, #checkboxes2 label {
+    display: flex;
+    color: white;
+    align-items: center;
+    margin: 0 0 5px 0;
+}
+
+#checkboxes label:hover, #checkboxes2 label:hover {
+    background-color: #FFBE14;
+}
+.option input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+    margin-right: 5px;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em black;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.goal_item input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border: 3px solid black;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+    margin-right: 5px;
+}
+
+.goal_item input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em black;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.goal_item input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+.workingTime_option select{
+    width: 172px;
+    height: 33px;
+    background: #FFBE14;
+    border-radius: 50px;
+    color: white;
+}
+select{
+    padding: 0 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+select::-ms-expand {
+    display: none;
+}
+.workingTime_option, .selectBox{
+    position: relative;
+}
+.workingTime_option::before, .selectBox::before, .selectBox2::before{
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 16px 10.5px 0 10.5px;
+    border-color: white transparent transparent transparent;
+    pointer-events: none;
+}
+/* MULTI SELECT*/
+
+/* GOAL */
+.goal_item{
+    width: 454px;
+    height: 55px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.item_rectangle{
+    width: 45px;
+    height: 45px;
+    left: 965px;
+    top: 241px;
+
+    border: 5px solid #000000;
+}
+.goal_title{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+}
+.goal_body{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.item_content, .item_contentAdd{
+    display: flex;
+    flex-direction: column;
+}
+.item_contentAdd{
+    align-items: center;
+}
+.goal_category{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+
+    width: 100px;
+    height: 24px;
+
+    background-color: #86E8AD;
+
+    border-radius: 1rem;
+    color: white;
+    text-align: center;
+}
+.goal_time{
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+/* GOAL */
+
+/*SEARCH BUTTON NEXT*/
+.search_button{
+    margin: 0 auto;
+    margin: 0 100px;
+    bottom: 58px;
+    position: absolute;
+}
+.search_button button{
+    width: 300px;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+
+    background: #FFBE14;
+    border-radius: 50px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 150%;
+    /* identical to box height, or 60px */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+/*SEARCH BUTTON NEXT*/

@@ -7,3 +7,26 @@
     margin: 17px 0;
     font-size: 24px;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: orange;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.button {
+    background-color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: orange;
+    margin-right: 10px; /* Добавляем отступ справа */
+}

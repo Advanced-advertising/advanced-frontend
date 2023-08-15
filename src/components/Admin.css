@@ -1,0 +1,72 @@
+.AppAdmin {
+    text-align: center;
+}
+
+.App-header-admin {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.admin-panel {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.admin-panel h2 {
+    margin-bottom: 20px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.category-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+.category-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.category-list .selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.object-list {
+    flex: 2;
+    padding: 20px;
+    margin-top: 0px;
+}
+
+.object-list h2 {
+    margin-bottom: 20px;
+}
+
+.object-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.object-list li {
+    margin-bottom: 10px;
+}
+.block-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}

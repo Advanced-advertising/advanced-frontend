@@ -1,0 +1,40 @@
+.object-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 900px;
+}
+
+.object-item {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.object-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.object-details {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 300px;
+}
+
+.object-details h2 {
+    font-size: 24px;
+}
+
+.object-details p {
+    font-size: 16px;
+}
+
+.App-main {
+    padding: 20px;
+}

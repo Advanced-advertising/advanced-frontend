@@ -11,7 +11,7 @@ const Login = () => {
             <div className="login_logo">
                 <img src={logo} alt="error"/>
             </div>
-            <p className='error_Message'>Wrong email or password</p>
+            
             <form action="#">
                 <div className="input_boxes">
                     <div className="input_box">

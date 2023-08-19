@@ -22,12 +22,6 @@ i18n
         interpolation: { escapeValue: false } // Разрешает использовать HTML-теги в переводах
     });
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

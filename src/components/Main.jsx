@@ -6,6 +6,8 @@ import notification from "../images/Notifications icon.png"
 import search from "../images/Search.png";
 import advert from "../images/advert.png";
 import payment from "../images/payment.png";
+import { useTranslation } from 'react-i18next';
+
 // const containerStyle = {
 //     width: '100%',
 //     height: '100%'

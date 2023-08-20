@@ -15,16 +15,6 @@ import { useTranslation } from 'react-i18next';
 
 
 const Main = (props) => {
-    //
-    // const mapRef = useRef(undefined)
-    // const onLoad = React.useCallback(function callback(map) {
-    //     mapRef.current = map
-    // }, [])
-    //
-    // const onUnmount = React.useCallback(function callback(map) {
-    //     mapRef.current = undefined
-    // }, [])
-
     let expanded = false;
     function showCheckboxes() {
         let checkboxes = document.getElementById("checkboxes");
@@ -49,7 +39,6 @@ const Main = (props) => {
         }
     }
     return (
-
         <div className="container">
             <div id="map"></div>
 

@@ -21,13 +21,12 @@ function Screen() {
     return (
         <div className="screen-container">
             <div className="object-image">
-                <img src="https://via.placeholder.com/300" alt="Объект" />
+                <img src={"https://content2.rozetka.com.ua/goods/images/big/165921172.jpg"} className="object-image" />
             </div>
             <div className="spacer"></div>
             <div className="object-details">
                 <h2>Название объекта</h2>
                 <p>Описание объекта.</p>
-                <button className="rent-button">Арендовать</button>
                 <div className="type-radio">
                     <label>
                         <input
@@ -77,6 +76,8 @@ function Screen() {
                         onChange={handleEndDateChange}
                     />
                 </label>
+
+                <button className="rent-button">Арендовать</button>
             </div>
         </div>
     );

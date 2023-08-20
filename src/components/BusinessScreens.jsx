@@ -1,71 +1,86 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import './BusinessScreens.css';
-
-const objects = [
-    {
-        id: 1,
-        name: 'Экран 1',
-        phone: '123-456-7890',
-        image: 'https://via.placeholder.com/150',
-        description: 'Описание объекта 1.',
-    },
-    {
-        id: 2,
-        name: 'Экран 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-        description: 'Описание объекта 2.',
-    },
-    {
-        id: 12,
-        name: 'Экран 1',
-        phone: '123-456-7890',
-        image: 'https://via.placeholder.com/150',
-        description: 'Описание объекта 1.',
-    },
-    {
-        id: 22,
-        name: 'Экран 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-        description: 'Описание объекта 2.',
-    },
-    {
-        id: 11,
-        name: 'Экран 1',
-        phone: '123-456-7890',
-        image: 'https://via.placeholder.com/150',
-        description: 'Описание объекта 1.',
-    },
-    {
-        id: 21,
-        name: 'Экран 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-        description: 'Описание объекта 2.',
-    },
-    // Добавьте больше объектов по аналогии
-];
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 function AppBusinessScreens() {
+    const {state} = useLocation();
+    const business_data = state.business;
+    const [screens, setScreens] = useState([]);
+    const [categories, setCategories] = useState([]);
+
+    console.log(state)
+    useEffect(() => {
+        const fetchData = async () => {
+            const token = localStorage.getItem('userToken');
+            console.log(token)
+            try {
+                const response = await axios.post(
+                    'http://localhost:4000/screens/get_all_by_business_id',
+                    business_data.business_id,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
+                setScreens(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const token = localStorage.getItem('userToken');
+            console.log(token)
+            try {
+                const response = await axios.post(
+                    'http://localhost:4000/businesses/get_categories',
+                    business_data.business_id,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
+                setCategories(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <div className="App">
             <header className="App-header">
                 <div className="object-details">
-                    <h2>Имя: Бизнесс</h2>
-                    <img src={objects[0].image} alt={objects[0].name} className="object-image" />
-                    <p>Описание: Лоорен инсуп</p>
+                    <img src={'https://via.placeholder.com/150'} className="object-image" />
+                    <h2>{business_data.business_name}</h2>
+                    <p>{business_data.email}</p>
+                    <p>{business_data.phone_number}</p>
+                    <p>Business categories: </p>
+                    {categories.map((cat) => (
+                        <button className="oval-button">{cat.category_name}</button>
+                    ))}
                 </div>
             </header>
             <main className="App-main">
-                <h1>Список экранов</h1>
+                <p style={{ color: 'black', textAlign: 'center', fontSize: '30px'  }}>Screen List</p>
                 <ul className="object-list">
-                    {objects.map((object) => (
-                        <li key={object.id} className="object-item">
-                            <img src={object.image} alt={object.name} className="object-image" />
+                    {screens.map((object) => (
+                        <li key={object.screen_id} className="object-item">
+                            <img src={"https://content2.rozetka.com.ua/goods/images/big/165921172.jpg"} className="object-image" />
                             <div className="object-details">
-                                <h2>{object.name}</h2>
-                                <p>Телефон: {object.phone}</p>
+                                <h2>Name {object.screen_name}</h2>
+                                <h2>Price per 30 seconds: {object.price_per_time}$</h2>
                             </div>
                         </li>
                     ))}

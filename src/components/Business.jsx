@@ -1,82 +1,44 @@
+import React, {useEffect, useState} from 'react';
+import './Business.module.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-import React, {useRef} from 'react';
-import './Business.css';
 
-const objects = [
-    {
-        id: 1,
-        name: 'Бизнес 1',
-        phone: '123-456-7890',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 2,
-        name: 'Бизнес 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 3,
-        name: 'Бизнес 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 10,
-        name: 'Бизнес 1',
-        phone: '123-456-7890',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 20,
-        name: 'Бизнес 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 30,
-        name: 'Бизнес 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 11,
-        name: 'Бизнес 1',
-        phone: '123-456-7890',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 24,
-        name: 'Бизнес 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-    },
-    {
-        id: 38,
-        name: 'Бизнес 2',
-        phone: '987-654-3210',
-        image: 'https://via.placeholder.com/150',
-    },
-];
+function Business() {
+    const [businesses, setBusinesses] = useState([]);
 
-function App() {
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:4000/businesses/get_all');
+                setBusinesses(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <div className="App">
-            <header className="App-header">
-                <ul className="object-list">
-                    {objects.map((object) => (
-                        <li key={object.id} className="object-item">
-                            <img src={object.image} alt={object.name} className="object-image" />
+            <Link to='/business_screens' state={{ business: "dwadaw"}}  />
+            <ul className="object-list-business">
+                    <p style={{ color: 'black', textAlign: 'center', fontSize: '30px'}}>Businesses</p>
+                    {businesses.map((object) => (
+                        <Link to='/business_screens' state={{ business: object}} key={object.business_id} >
+                        <li className="object-item">
+                            <img src={'https://via.placeholder.com/150'} className="object-image" />
                             <div className="object-details">
-                                <h2>{object.name}</h2>
-                                <p>Телефон: {object.phone}</p>
+                                <h2 style={{ color: 'black' }}>{object.business_name}</h2>
+                                <p style={{ color: 'black' }}>Телефон: {object.phone_number}</p>
                             </div>
                         </li>
+                        </Link>
                     ))}
                 </ul>
-            </header>
         </div>
     );
 }
 
-export default App;
+export default Business;

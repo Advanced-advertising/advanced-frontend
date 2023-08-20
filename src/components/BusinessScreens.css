@@ -2,9 +2,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 900px;
 }
-
+.oval-button {
+    background-color: yellow;
+    border: none;
+    border-radius: 10%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    margin: 10px;
+}
 .object-item {
     margin: 10px;
     padding: 20px;

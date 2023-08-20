@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 import './Screen.css';
 
 function Screen() {
     const [selectedType, setSelectedType] = useState('type1');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
+
+    const {state} = useLocation();
+    const business_data = state.business;
+    const screen_data = state.screen_data;
+    const categories = state.categories;
 
     const handleTypeChange = (event) => {
         setSelectedType(event.target.value);
@@ -25,8 +31,14 @@ function Screen() {
             </div>
             <div className="spacer"></div>
             <div className="object-details">
-                <h2>Название объекта</h2>
-                <p>Описание объекта.</p>
+                <h2>Name: {screen_data.screen_name}</h2>
+                <p>Description: {screen_data.characteristics}</p>
+                <p>Price per 30 seconds: {screen_data.price_per_time}</p>
+                <p>Traffic: {screen_data.traffic}</p>
+                <p>Categories: </p>
+                {categories.map((cat) => (
+                    <button className="oval-button">{cat.category_name}</button>
+                ))}
                 <div className="type-radio">
                     <label>
                         <input
@@ -57,27 +69,15 @@ function Screen() {
                     </label>
                 </div>
                 <label>
-                    Адрес:
-                    <input type="text" />
-                </label>
-                <label>
-                    Начальная дата:
+                    Date:
                     <input
                         type="date"
                         value={startDate}
                         onChange={handleStartDateChange}
                     />
                 </label>
-                <label>
-                    Конечная дата:
-                    <input
-                        type="date"
-                        value={endDate}
-                        onChange={handleEndDateChange}
-                    />
-                </label>
 
-                <button className="rent-button">Арендовать</button>
+                <button className="rent-button">Rent</button>
             </div>
         </div>
     );

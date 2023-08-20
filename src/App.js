@@ -15,6 +15,8 @@ import Screen from "./components/Screen"
 import Optimize from "./components/Optimize"
 import AdminLogin from "./components/AdminLogin"
 import Header from "./components/Header"
+import Ads from "./components/Ads"
+import CreateAd from "./components/CreateAd"
 import React from 'react';
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
         <Route path='/admin_login' element={<AdminLogin/>}/>
         <Route path='/business_screens' element={<BusinessScreens/>}/>
         <Route path='/screen' element={<Screen/>}/>
+        <Route path='/user_ads' element={<Ads/>}/>
+        <Route path='user_ads/create_ad' element={<CreateAd/>}/>
         <Route path='/optimize' element={<Optimize/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/main' element={<Main setOpen={setOpen}

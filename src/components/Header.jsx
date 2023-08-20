@@ -12,7 +12,7 @@ const Header = () => {
         navigate('/business');
     };
     const handleMyAds = () => {
-        navigate('/');
+        navigate('/user_ads');
     };
     const handleOptimize = () => {
         navigate('/optimize');

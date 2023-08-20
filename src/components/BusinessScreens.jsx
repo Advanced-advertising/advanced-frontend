@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './BusinessScreens.css';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function AppBusinessScreens() {
     const {state} = useLocation();
@@ -76,13 +77,13 @@ function AppBusinessScreens() {
                 <p style={{ color: 'black', textAlign: 'center', fontSize: '30px'  }}>Screen List</p>
                 <ul className="object-list">
                     {screens.map((object) => (
-                        <li key={object.screen_id} className="object-item">
+                        <Link to='/screen' state={{ screen_data: object, business: business_data, categories: categories}} key={object.screen_id} >>
                             <img src={"https://content2.rozetka.com.ua/goods/images/big/165921172.jpg"} className="object-image" />
                             <div className="object-details">
-                                <h2>Name {object.screen_name}</h2>
+                                <h2>{object.screen_name}</h2>
                                 <h2>Price per 30 seconds: {object.price_per_time}$</h2>
                             </div>
-                        </li>
+                        </Link>
                     ))}
                 </ul>
             </main>

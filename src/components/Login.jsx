@@ -12,6 +12,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const userToken = localStorage.getItem('userToken')
+
     useEffect(() => {
         if (userToken !== null) {
             navigate("/main");

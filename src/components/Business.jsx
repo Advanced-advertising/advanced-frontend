@@ -22,7 +22,6 @@ function Business() {
 
     return (
         <div className="App">
-            <Link to='/business_screens' state={{ business: "dwadaw"}}  />
             <ul className="object-list-business">
                     <p style={{ color: 'black', textAlign: 'center', fontSize: '30px'}}>Businesses</p>
                     {businesses.map((object) => (

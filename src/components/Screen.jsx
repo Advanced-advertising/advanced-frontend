@@ -9,6 +9,7 @@ function Screen() {
 
     const {state} = useLocation();
     const business_data = state.business;
+    console.log("BUSINESS DATA -----", business_data)
     const screen_data = state.screen_data;
     const categories = state.categories;
 
@@ -35,8 +36,12 @@ function Screen() {
                 <p>Description: {screen_data.characteristics}</p>
                 <p>Price per 30 seconds: {screen_data.price_per_time}</p>
                 <p>Traffic: {screen_data.traffic}</p>
+                <hr />
+                <p>Business name: {business_data.business_name}</p>
+                <p>Phone number: {business_data.phone_number}</p>
+                <p>Email: {business_data.email}</p>
                 <p>Categories: </p>
-                {categories.map((cat) => (
+                {business_data.categories?.map((cat) => (
                     <button className="oval-button">{cat.category_name}</button>
                 ))}
                 <div className="type-radio">

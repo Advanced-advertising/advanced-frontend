@@ -61,6 +61,15 @@
 .object-list li {
     margin-bottom: 10px;
 }
+.warning-button {
+    background-color: #e57800;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
 .primary-button {
     background-color: #35a2dc;
     color: white;

@@ -61,6 +61,15 @@
 .object-list li {
     margin-bottom: 10px;
 }
+.primary-button {
+    background-color: #35a2dc;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
 .block-button {
     background-color: #dc3545;
     color: white;

@@ -18,6 +18,8 @@ import Header from "./components/Header"
 import Ads from "./components/Ads"
 import CreateAd from "./components/CreateAd"
 import React from 'react';
+import Admin from "./components/Admin";
+import {AdminCreateScreen} from "./components/AdminCreateScreen";
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/business' element={<Business/>}/>
         <Route path='/admin_login' element={<AdminLogin/>}/>
+        <Route path='/admin_panel' element={<Admin />}/>
+        <Route path='/admin/create-screen' element={<AdminCreateScreen />}/>
         <Route path='/business_screens' element={<BusinessScreens/>}/>
         <Route path='/screen' element={<Screen/>}/>
         <Route path='/user_ads' element={<Ads/>}/>

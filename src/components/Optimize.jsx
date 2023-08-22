@@ -84,7 +84,7 @@ function Optimize() {
             <header className="App-header">
                 <div className="form-container">
                     <label>
-                        Количество денег:
+                        Amount of money:
                         <input
                             type="number"
                             value={money}
@@ -92,7 +92,7 @@ function Optimize() {
                         />
                     </label>
                     <label>
-                        Страна:
+                        Country:
                         <input
                             type="text"
                             value={country}
@@ -100,7 +100,7 @@ function Optimize() {
                         />
                     </label>
                     <label>
-                        Город:
+                        City:
                         <input
                             type="text"
                             value={city}
@@ -133,7 +133,7 @@ function Optimize() {
                     ))}
                     </ul>
                     <button className="calculate-button" onClick={findOptimalScreens}>
-                        Рассчитать
+                        Optimize
                     </button>
                 </div>
             </header>

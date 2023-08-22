@@ -38,7 +38,7 @@ function Ads() {
                 {ads.map((object) => (
                     <li key={object.ad_id} >
                         <li className="object-item">
-                            <img src={ads.img_url} className="object-image" />
+                            <img src={object.img_url} className="object-image" />
                             <div className="object-details">
                                 <h2 style={{ color: 'black' }}>{object.ad_name}</h2>
                                 <p style={{ color: 'black' }}>Status: {object.status}</p>

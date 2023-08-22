@@ -30,7 +30,7 @@ function Business() {
                             <img src={'https://via.placeholder.com/150'} className="object-image" />
                             <div className="object-details">
                                 <h2 style={{ color: 'black' }}>{object.business_name}</h2>
-                                <p style={{ color: 'black' }}>Телефон: {object.phone_number}</p>
+                                <p style={{ color: 'black' }}>Phone number: {object.phone_number}</p>
                             </div>
                         </li>
                         </Link>

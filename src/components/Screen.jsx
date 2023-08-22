@@ -1,29 +1,86 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 import './Screen.css';
 
+/***
+ * @param screenPrice - Price per 30 seconds
+ * @param duration - Duration in seconds
+ */
+function calculateAdOrderPrice(screenPrice, duration) {
+    return (screenPrice / 30) * duration;
+}
+
 function Screen() {
-    const [selectedType, setSelectedType] = useState('type1');
+    const [selectedAdId, setSelectedAdId] = useState();
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
+    const [adDuration, setAdDuration] = useState();
+
+    const [ads, setAds] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const token = localStorage.getItem('userToken');
+            try {
+                const response = await axios.get(
+                    'http://localhost:4000/ad/get_user_ads',
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
+                setAds(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     const {state} = useLocation();
     const business_data = state.business;
-    console.log("BUSINESS DATA -----", business_data)
     const screen_data = state.screen_data;
     const categories = state.categories;
 
-    const handleTypeChange = (event) => {
-        setSelectedType(event.target.value);
-    };
-
     const handleStartDateChange = (event) => {
         setStartDate(event.target.value);
-    };
-
-    const handleEndDateChange = (event) => {
         setEndDate(event.target.value);
     };
+
+    async function createAdOrder() {
+        const token = localStorage.getItem('userToken');
+        try {
+            const response = await axios.post(
+                'http://localhost:4000/users/create_ad_order',
+                {
+                    start_time: new Date(startDate).getTime(),
+                    end_time: new Date(endDate).getTime(),
+                    price: calculateAdOrderPrice(screen_data.price_per_time, adDuration),
+                    ad_id: selectedAdId,
+                    screen_id: screen_data.screen_id,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+            setAds(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    async function handleRent() {
+        await createAdOrder();
+        alert("Created order successfully");
+    }
 
     return (
         <div className="screen-container">
@@ -45,33 +102,23 @@ function Screen() {
                     <button className="oval-button">{cat.category_name}</button>
                 ))}
                 <div className="type-radio">
-                    <label>
-                        <input
-                            type="radio"
-                            value="type1"
-                            checked={selectedType === 'type1'}
-                            onChange={handleTypeChange}
-                        />
-                        Тип 1
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            value="type2"
-                            checked={selectedType === 'type2'}
-                            onChange={handleTypeChange}
-                        />
-                        Тип 2
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            value="type3"
-                            checked={selectedType === 'type3'}
-                            onChange={handleTypeChange}
-                        />
-                        Тип 3
-                    </label>
+                    {ads?.filter(ad => ad.status === "Approved")
+                        .map(({ad_id, ad_name, img_url, status: ad_status}) => (
+                        <div key={`ad-${ad_id}`} className="bg-orange-50 p-5 my-5 w-fit">
+                            <input
+                                id={`ad-input-${ad_id}`}
+                                type="radio"
+                                value="type1"
+                                checked={selectedAdId === ad_id}
+                                onChange={() => setSelectedAdId(ad_id)}
+                            />
+                            <label htmlFor={`ad-input-${ad_id}`} >
+                                <img src={img_url} alt={ad_name} className="w-36" />
+                                <h3>{ad_name}</h3>
+                                <p>Status: {ad_status}</p>
+                            </label>
+                        </div>
+                    ))}
                 </div>
                 <label>
                     Date:
@@ -82,7 +129,9 @@ function Screen() {
                     />
                 </label>
 
-                <button className="rent-button">Rent</button>
+                <input type="number" placeholder="Ad duration (seconds)" value={adDuration} onChange={e => setAdDuration(parseInt(e.target.value))}/>
+
+                <button className="rent-button" onClick={handleRent}>Rent</button>
             </div>
         </div>
     );
